@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request, status
+from fastapi import FastAPI, Request,status
 import uvicorn, threading
 from PoolInfo import PoolInfo
 from pydantic import BaseModel
@@ -19,7 +19,7 @@ async def ps_data(payload: List[PoolInfo]):
     return {"message": "Data received", "status": status.HTTP_201_CREATED}
 
 
-@app.post("/")
+@app.get("/")
 async def root():
     return {"message": "All good", "status": status.HTTP_200_OK}
 
