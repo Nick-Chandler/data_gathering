@@ -18,5 +18,11 @@ async def ps_data(payload: List[PoolInfo]):
     threading.Thread(target=worker, args=(pool_info,)).start()
     return {"message": "Data received"}
 
+
+@app.get("/")
+async def root():
+    return {"message": "All good"}
+
+
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
