@@ -1,0 +1,6 @@
+tunnel: helius
+
+ingress:
+  - hostname: helius.bluevehicledog.xyz
+    service: http://localhost:8000
+  - service: http_status:404
