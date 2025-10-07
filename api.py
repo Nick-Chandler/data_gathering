@@ -19,10 +19,13 @@ async def ps_data(payload: List[PoolInfo]):
     return {"message": "Data received", "status": status.HTTP_201_CREATED}
 
 
+
 @app.get("/")
 async def root():
     return {"message": "All good", "status": status.HTTP_200_OK}
-
+@app.head("/")
+async def root_head():
+    return {"message": "All good", "status": status.HTTP_200_OK}
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
